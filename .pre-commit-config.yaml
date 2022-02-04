@@ -1,0 +1,20 @@
+repos:
+- repo: git://github.com/dnephin/pre-commit-golang
+  rev: v0.4.0
+  hooks:
+      - id: go-fmt
+      - id: go-vet
+      - id: go-imports
+        args: [-over=15]
+      - id: golangci-lint
+      - id: go-unit-tests
+      - id: go-build
+
+- repo: https://github.com/tekwizely/pre-commit-golang
+  rev: v1.0.0-beta.4
+  hooks:
+    - id: go-staticcheck-mod
+    - id: go-critic
+      args:
+      - "-enableAll"
+      - "-disable=hugeParam"
